@@ -53,7 +53,7 @@ export class LoginComponent {
   }
 
   exibirMsgSucesso(): void {
-    let mensageErro: string = `${this.usuario}, seu login executado com sucesso!`;
+    let mensageErro: string = `${this.usuario}, seu login  foi executado com sucesso!`;
     this.modalMensagemService.ativarModalMsg(mensageErro);
   }
 
