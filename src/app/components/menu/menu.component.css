@@ -1,0 +1,7 @@
+.text:hover {
+    color: dodgerblue;
+}
+
+.text {
+    font-size: 20px;
+}

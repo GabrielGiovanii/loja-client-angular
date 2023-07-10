@@ -1,0 +1,15 @@
+table {
+    margin-top: 20px;
+}
+
+.espacamento-lateral {
+    margin-left: 1%;
+}
+
+.color-text:hover {
+    color: dodgerblue;
+}
+
+.alinhamento-texto {
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+<div class="w3-container">
+    <div class="w3-modal" *ngIf="exibirModalMsg" [style.display]="'block'">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span (click)="ocultarModalMsg()" class="w3-button w3-display-topright">&times;</span>
+                <p>{{mensagem}}</p>
+            </div>
+        </div>
+    </div>
+</div>

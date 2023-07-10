@@ -1,0 +1,48 @@
+<h1 class="espacamento-lateral">Editar Veículo</h1>
+
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="aligned-id">Id:</label>
+            <label>{{veiculo.Id}}</label>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-marca">Marca</label>
+            <input type="text" id="aligned-marca" maxlength="50" [(ngModel)]="veiculo.Marca" name="marca" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-nome">Nome</label>
+            <input type="text" id="aligned-nome" maxlength="100" [(ngModel)]="veiculo.Nome" name="nome" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-ano-modelo">Ano do Modelo</label>
+            <input type="text" id="aligned-ano-modelo" maxlength="10" [(ngModel)]="veiculo.AnoModelo"
+                name="anoModelo" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-data-fabricacao">Data de Fabricação</label>
+            <input type="date" id="aligned-data-fabricacao" [(ngModel)]="veiculo.DataFabricacao"
+                name="dataFabricacao" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-valor">Valor</label>
+            <input type="text" id="aligned-valor" maxlength="9" [(ngModel)]="veiculo.Valor" name="valor" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-">Opcional</label>
+            <input type="text" maxlength="500" [(ngModel)]="veiculo.Opcional" name="opcional" />
+            <span class="pure-form-message-inline">*</span>
+        </div>
+        <div class="pure-controls">
+            <button type="button" (click)="desejaEditar(veiculo.Id)"
+                class="pure-button pure-button-primary">Editar</button>
+            <button type="reset" class="pure-button espacamento-lateral">Limpar</button>
+            <button type="button" (click)="back()" class="pure-button espacamento-lateral">Voltar</button>
+        </div>
+    </fieldset>
+</form>

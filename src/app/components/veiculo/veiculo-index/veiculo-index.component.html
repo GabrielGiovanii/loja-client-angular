@@ -1,0 +1,39 @@
+<h1 class="espacamento-lateral">CRUD de Veículos</h1>
+
+<form class="pure-form espacamento-lateral">
+    <label for="idVeiculo">Id</label>
+    <input type="text" class="pure-input-rounded espacamento-lateral" [(ngModel)]="codigoPesquisa"
+        name="CodigoPesquisa" />
+    <button type="button" (click)="get()" class="pure-button espacamento-lateral">Pesquisar</button>
+    <button type="button" (click)="create()" class="pure-button espacamento-lateral">Novo</button>
+</form>
+
+<table class="pure-table pure-table-bordered espacamento-inferior espacamento-lateral">
+    <thead>
+        <tr class="alinhamento-texto">
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Nome</th>
+            <th>Ano do Modelo</th>
+            <th>Data de Fabricação</th>
+            <th>Valor</th>
+            <th>Opcional</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let veiculo of veiculos" class="alinhamento-texto">
+            <td>{{veiculo.Id}}</td>
+            <td>{{veiculo.Marca}}</td>
+            <td>{{veiculo.Nome}}</td>
+            <td>{{veiculo.AnoModelo}}</td>
+            <td>{{veiculo.DataFabricacao | date:'dd/MM/yyyy'}}</td>
+            <td>{{veiculo.Valor | currency}}</td>
+            <td>{{veiculo.Opcional}}</td>
+            <td>
+                <a class="pure-menu-link cursor color-text" (click)="edit(veiculo.Id)">Editar</a>
+                <a class="pure-menu-link cursor color-text" (click)="desejaExcluir(veiculo.Id)">Excluir</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
