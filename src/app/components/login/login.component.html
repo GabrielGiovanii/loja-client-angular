@@ -3,9 +3,10 @@
         <h1>Login</h1>
         <p>Digite os seus dados de acesso no campo abaixo.</p>
         <label for="usuario">Usuário</label>
-        <input type="text" placeholder="Digite seu usuário" autofocus="true" [(ngModel)]="usuario" name="usuario" />
+        <input type="text" placeholder="Digite seu usuário" autofocus="true" [(ngModel)]="this.usuario.login"
+            name="usuario" />
         <label for="senha">Senha</label>
-        <input type="password" placeholder="Digite sua senha" [(ngModel)]="senha" name="senha" />
+        <input type="password" placeholder="Digite sua senha" [(ngModel)]="this.usuario.senha" name="senha" />
         <input type="button" (click)="logar()" value="Acessar" class="btn" />
     </form>
 </div>

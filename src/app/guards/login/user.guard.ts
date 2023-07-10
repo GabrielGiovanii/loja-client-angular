@@ -15,7 +15,6 @@ export class UserGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    let isAuthenticated = this.authService.getIsAuthenticated();
-    return isAuthenticated === true ? true : this.router.navigate(['acesso-negado']);
+    return (this.authService.getIsAuthenticated() === true) ? true : this.router.navigate(['login']);
   }
 }

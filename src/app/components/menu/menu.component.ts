@@ -16,8 +16,5 @@ export class MenuComponent {
     this.authService.setIsAuthenticated(false);
     this.authService.removeAuthToken();
     this.router.navigate(['login']);
-    console.log(this.authService.getIsAuthenticated());
-    console.log(this.authService.tokenKey.length);
   }
-
 }

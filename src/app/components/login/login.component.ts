@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario.model';
 import { AuthService } from 'src/app/services/login/auth.service';
 import { ModalMensagemService } from 'src/app/services/modal-mensagem/modal-mensagem.service';
 
@@ -10,24 +11,16 @@ import { ModalMensagemService } from 'src/app/services/modal-mensagem/modal-mens
 })
 export class LoginComponent {
 
-  usuario: string;
-  senha: string;
+  usuario: Usuario;
 
-  constructor(private router: Router, private authService: AuthService,
-    private modalMensagemService: ModalMensagemService) {
-    this.usuario = '';
-    this.senha = '';
+  constructor(private authService: AuthService, private modalMensagemService: ModalMensagemService) {
+    this.usuario = new Usuario();
   }
 
   logar(): void {
     let token = '';
-    if (this.usuario === 'a' && this.senha === 'b') {
-      this.authService.setIsAuthenticated(true);
-      token = `${this.usuario}${this.senha}`;
-      this.authService.setAuthToken(token);
-      this.router.navigate(['home']);
+    if (this.authService.authenticate(this.usuario))
       this.exibirMsgSucesso();
-    }
     else
       this.exibirMsgErro();
   }
@@ -39,11 +32,11 @@ export class LoginComponent {
   getMsgErroAdequada(): string {
     let mensageErro: string = '';
 
-    if (this.usuario === '' && this.senha === '')
+    if (this.usuario.login === '' && this.usuario.senha === '')
       mensageErro = 'Usuário e senha são obrigatórios!';
-    else if (this.usuario === '')
+    else if (this.usuario.login === '')
       mensageErro = 'Usuário é obrigatório!';
-    else if (this.senha === '')
+    else if (this.usuario.senha === '')
       mensageErro = 'Senha é obrigatório!';
     else {
       mensageErro = 'Usuário e/ou senha Inválidos';
@@ -53,8 +46,7 @@ export class LoginComponent {
   }
 
   exibirMsgSucesso(): void {
-    let mensageErro: string = `${this.usuario}, seu login  foi executado com sucesso!`;
+    let mensageErro: string = `${this.usuario.login}, seu login  foi executado com sucesso!`;
     this.modalMensagemService.ativarModalMsg(mensageErro);
   }
-
 }
