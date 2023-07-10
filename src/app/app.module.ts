@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AcessoNegadoComponent } from './components/mensagem/acesso-negado/acesso-negado.component';
 import { ModalMensagemComponent } from './components/mensagem/modal-mensagem/modal-mensagem.component';
+import { MasterPageComponent } from './components/master-page/master-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalMensagemComponent } from './components/mensagem/modal-mensagem/mod
     MensagemErro404Component,
     LoginComponent,
     AcessoNegadoComponent,
-    ModalMensagemComponent
+    ModalMensagemComponent,
+    MasterPageComponent
   ],
   imports: [
     BrowserModule,

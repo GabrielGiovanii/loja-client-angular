@@ -11,21 +11,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'Loja-Angular';
 
-  isAuthenticated: boolean;
-
-  constructor(private authService: AuthService, private modalMensagemService: ModalMensagemService,
-    private router: Router) {
-    this.isAuthenticated = false;
-
-    let authToken = this.authService.getAuthToken();
-
-    if (authToken)
-      this.authService.setIsAuthenticated(true);
-    else
-      this.router.navigate(['acesso-negado']);
-  }
-  exibirMenu(): boolean {
-    return this.authService.getIsAuthenticated();
+  constructor(private modalMensagemService: ModalMensagemService) {
   }
 
   exibirModalMsg(): boolean {

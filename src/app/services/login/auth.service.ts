@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor() {
     this.tokenKey = 'authToken';
-    this.isAuthenticated = false;
+    (this.getAuthToken() !== '') ? this.isAuthenticated = true : this.isAuthenticated = false;
   }
 
   setIsAuthenticated(value: boolean): void {
@@ -33,5 +33,4 @@ export class AuthService {
   removeAuthToken() {
     localStorage.removeItem(this.tokenKey);
   }
-
 }

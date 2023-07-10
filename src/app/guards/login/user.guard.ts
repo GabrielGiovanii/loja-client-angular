@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, NavigationStart, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/login/auth.service';
 
@@ -8,8 +8,7 @@ import { AuthService } from 'src/app/services/login/auth.service';
 })
 export class UserGuard implements CanActivate {
 
-  constructor(private authService: AuthService) {
-
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   canActivate(
@@ -17,12 +16,6 @@ export class UserGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     let isAuthenticated = this.authService.getIsAuthenticated();
-
-    if (isAuthenticated === true)
-      return true;
-    else {
-      return false;
-    }
+    return isAuthenticated === true ? true : this.router.navigate(['acesso-negado']);
   }
-
 }
