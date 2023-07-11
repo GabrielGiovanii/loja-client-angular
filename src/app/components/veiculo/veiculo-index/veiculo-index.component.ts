@@ -66,6 +66,7 @@ export class VeiculoIndexComponent {
       mensagemErro = 'O Id da pesquisa é inválido.';
     else if (erro === 404) {
       mensagemErro = 'Veículo não foi encontrado.';
+      this.codigoPesquisa = '';
       this.get();
     }
     else

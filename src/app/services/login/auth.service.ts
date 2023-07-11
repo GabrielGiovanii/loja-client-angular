@@ -17,7 +17,7 @@ export class AuthService {
 
   authenticate(usuario: Usuario): boolean {
     let token = '';
-    if (usuario.login === 'a' && usuario.senha === 'b') {
+    if (usuario.login === 'gabriel' && usuario.senha === '123') {
       this.setIsAuthenticated(true);
       token = `${usuario.login}${usuario.senha}`;
       this.setAuthToken(token);
