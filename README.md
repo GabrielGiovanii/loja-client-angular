@@ -1,4 +1,4 @@
-<h1 align="center">CRUD de veículos</h1>
+<h1 align="center">CRUD de Veículos</h1>
 
 
 ## Sobre o Projeto
