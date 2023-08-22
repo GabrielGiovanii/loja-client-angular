@@ -8,9 +8,10 @@ Este projeto é oriundo de um processo seletivo, sendo a 5° e última avaliaç�
 * [Back End](https://github.com/GabrielGiovanii/loja-api-rest)
 
 ## Tecnologias Utilizadas
-* Angular, versão 15.2.7
-* HTML 5 e CSS 3
-* TypeScript
+* [Angular, versão 15.2.7](https://angular.io/docs)
+* [HTML 5](https://www.w3.org/TR/2011/WD-html5-20110405)
+* [CSS 3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523)
+* [TypeScript](https://www.typescriptlang.org/docs/)
   
 ## Práticas Adotadas
 * Componentes: O projeto é estruturado em componentes reutilizáveis, como Veiculo-Create, Veiculo-Edit e Veiculo-Index, seguindo as melhores práticas do Angular.
